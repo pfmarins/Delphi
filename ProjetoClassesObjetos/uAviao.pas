@@ -3,13 +3,11 @@ unit uAviao;
 interface
 
 uses
- Dialogs;
+ Dialogs, uMeioTransporte;
 
 type
 
- TAviao = class
- Descricao : string;
- Capacidade : integer;
+ TAviao = class(TMeioTransporte)
  HorasVoo : integer;
  procedure Mover;
 end;

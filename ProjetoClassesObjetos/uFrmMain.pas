@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uAviao, uCarro;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uAviao, uCarro, uMeioTransporte;
 
 type
   TFrmExemplo = class(TForm)
@@ -37,8 +37,7 @@ type
     { Private declarations }
   public
     { Public declarations }
-    Carro : TCarro;
-    Aviao : TAviao;
+    Carro, Aviao : TMeioTransporte;
   end;
 
 var
@@ -60,7 +59,7 @@ begin
   Carro.Capacidade := StrToIntDef(EdtCapCarro.Text,0);
 
  if EdtQuilometragem.Text <>'' then
-  Carro.Quilometragem := StrToIntDef(EdtQuilometragem.Text,0);
+  TCarro(Carro).Quilometragem := StrToIntDef(EdtQuilometragem.Text,0);
 end;
 
 procedure TFrmExemplo.btnMoverClick(Sender: TObject);
@@ -80,7 +79,7 @@ begin
   Aviao.Capacidade := StrToIntDef(EdtCapAviao.Text,0);
 
  if EdtHorasVoo.Text <> '' then
- Aviao.HorasVoo := StrToIntDef(EdtHorasVoo.Text,0);
+ TAviao(Aviao).HorasVoo := StrToIntDef(EdtHorasVoo.Text,0);
 end;
 
 procedure TFrmExemplo.LiberarAviaoClick(Sender: TObject);

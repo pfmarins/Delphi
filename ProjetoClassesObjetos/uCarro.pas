@@ -2,13 +2,11 @@ unit uCarro;
 
 interface
 
-uses Dialogs;
+uses Dialogs, uMeioTransporte;
 
 type
 
- TCarro = class
- Descricao : string;
- Capacidade : integer;
+ TCarro = class(TMeioTransporte)
  Quilometragem : integer;
  procedure Mover;
 

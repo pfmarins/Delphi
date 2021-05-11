@@ -8,7 +8,7 @@ type
 
  TCarro = class(TMeioTransporte)
  Quilometragem : integer;
- procedure Mover;
+ procedure Mover; override;
 
 end;
 
@@ -18,6 +18,7 @@ implementation
 
 procedure TCarro.Mover;
 begin
+ inherited;
  ShowMessage(Descricao+' entrou em movimento.');
 end;
 

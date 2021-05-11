@@ -2,11 +2,13 @@ unit uMeioTransporte;
 
 interface
 
+uses dialogs;
+
 type
   TMeioTransporte = class
   Descricao : string;
   Capacidade : integer;
-  procedure Mover();
+  procedure Mover; virtual;
 end;
 
 implementation
@@ -15,7 +17,7 @@ implementation
 
 procedure TMeioTransporte.Mover;
 begin
-
+ ShowMessage('Ligando '+Descricao);
 end;
 
 end.

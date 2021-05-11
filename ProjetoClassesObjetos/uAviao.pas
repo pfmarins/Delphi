@@ -9,7 +9,7 @@ type
 
  TAviao = class(TMeioTransporte)
  HorasVoo : integer;
- procedure Mover;
+ procedure Mover; override;
 end;
 
 implementation

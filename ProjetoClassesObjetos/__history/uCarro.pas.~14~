@@ -1,0 +1,35 @@
+unit uCarro;
+
+interface
+
+uses Dialogs, uMeioTransporte;
+
+type
+
+ TCarro = class(TMeioTransporte)
+ Quilometragem : integer;
+ procedure Mover; override;
+ procedure Ligar(); override;
+ constructor create();
+
+end;
+
+implementation
+
+{ TCarro }
+
+procedure TCarro.Ligar;
+begin
+  inherited;
+  // repare que não vai inherited aqui
+  // pois não existe nada na classe base
+  ShowMessage('Ligando o carro ' + Descricao);
+end;
+
+procedure TCarro.Mover;
+begin
+ inherited;
+ ShowMessage(Descricao+' entrou em movimento.');
+end;
+
+end.
